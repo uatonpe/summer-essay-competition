@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>प्रमाणपत्र डाउनलोड करा</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;font-family:'Mukta',sans-serif;background:#edf3ff;color:#102457;text-align:center}
+    .wrap{max-width:1120px;margin:auto;padding:18px 12px 30px}
+    .panel{background:#fff;border:1px solid #e5ebfb;border-radius:24px;padding:16px;box-shadow:0 18px 42px rgba(10,35,102,.12)}
+    h1{margin:8px 0 10px;font-size:clamp(28px,4vw,38px);font-weight:800;color:#0a2366}
+    .sub{margin:0 0 14px;color:#5a6882;font-size:17px;line-height:1.5;font-weight:500}
+    canvas{width:100%;max-width:1000px;height:auto;border-radius:14px;box-shadow:0 10px 28px rgba(0,0,0,.10)}
+    .actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:16px}
+    button{border:0;border-radius:14px;background:linear-gradient(135deg,#e71e1e,#ff8b00);color:#fff;font-size:18px;font-weight:800;padding:14px 20px;cursor:pointer;box-shadow:0 12px 26px rgba(228,51,34,.24)}
+    button.alt{background:#fff;color:#0a2366;border:1px solid #d8e2fb;box-shadow:none}
+    @media (max-width:640px){button{width:100%}.actions{gap:10px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel">
+      <h1>तुमचे प्रमाणपत्र तयार आहे</h1>
+      <p class="sub">खालील प्रमाणपत्र डाउनलोड करा किंवा थेट पीडीएफ म्हणून जतन करा.</p>
+      <canvas id="certCanvas" width="1495" height="1052"></canvas>
+      <div class="actions">
+        <button onclick="downloadCertificate()">प्रमाणपत्र डाउनलोड करा</button>
+        <button class="alt" onclick="window.print()">प्रिंट / पीडीएफ</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('certCanvas');
+    const ctx = canvas.getContext('2d');
+    const template = new Image();
+    template.src = 'assets/certificate-template.png';
+
+    const studentName = localStorage.getItem('studentName') || 'विद्यार्थ्याचे नाव';
+    const certificateNo = localStorage.getItem('certificateNo') || ('AITSG-' + Math.floor(100000 + Math.random()*900000));
+    const submittedDate = localStorage.getItem('submittedDate') || new Date().toLocaleDateString('mr-IN');
+
+    function fitText(text, maxWidth, startSize){
+      let size = startSize;
+      while(size > 28){
+        ctx.font = '800 ' + size + 'px Mukta';
+        if(ctx.measureText(text).width <= maxWidth) return size;
+        size -= 2;
+      }
+      return size;
+    }
+
+    async function drawCertificate(){
+      await document.fonts.ready;
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      ctx.drawImage(template,0,0,canvas.width,canvas.height);
+
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#0a2366';
+
+      const nameSize = fitText(studentName, 1060, 58);
+      ctx.font = '800 ' + nameSize + 'px Mukta';
+      ctx.fillText(studentName, 747, 545);
+
+      ctx.font = '700 28px Mukta';
+      ctx.fillText(certificateNo, 747, 855);
+      ctx.fillText(submittedDate, 438, 855);
+    }
+
+    template.onload = drawCertificate;
+
+    function downloadCertificate(){
+      const link = document.createElement('a');
+      const safeName = (studentName || 'certificate').replace(/[\\/:*?"<>|]/g,'-');
+      link.download = safeName + '-certificate.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+  </script>
+</body>
+</html>
