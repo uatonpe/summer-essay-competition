@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>समर व्हेकेशन स्पेशल २०२६ | ऑनलाइन निबंध स्पर्धा</title>
+  <meta name="description" content="इयत्ता १ ली ते १० वी पर्यंतच्या विद्यार्थ्यांसाठी ऑनलाइन निबंध स्पर्धा. प्रवेश शुल्क फक्त ₹४९. सर्व सहभागी विद्यार्थ्यांना डिजिटल प्रमाणपत्र." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --blue:#0a2366;
+      --blue2:#103f99;
+      --red:#e43322;
+      --orange:#ff8400;
+      --gold:#ffc638;
+      --cream:#fff9eb;
+      --text:#18243f;
+      --muted:#52607b;
+      --border:#e8eefc;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Mukta',sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#fff4c8 0%,#eef8ff 42%,#ffffff 100%);
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none}
+    .wrap{max-width:1180px;margin:auto;padding:0 16px}
+    .topbar{
+      background:linear-gradient(90deg,#071b54,#0d439f);
+      color:#fff;
+      text-align:center;
+      padding:10px 14px;
+      font-weight:700;
+      font-size:15px;
+      line-height:1.35;
+    }
+    .hero{padding:18px 0 20px;position:relative;overflow:hidden}
+    .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+    .hero::before{width:380px;height:380px;right:-120px;top:-120px;background:radial-gradient(circle,rgba(255,198,56,.30),rgba(255,198,56,0));}
+    .hero::after{width:300px;height:300px;left:-120px;bottom:-80px;background:radial-gradient(circle,rgba(16,63,153,.10),rgba(16,63,153,0));}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;position:relative;z-index:1}
+    .poster-box{
+      background:#fff;
+      border-radius:28px;
+      padding:12px;
+      border:1px solid rgba(255,198,56,.65);
+      box-shadow:0 24px 55px rgba(10,35,102,.16);
+    }
+    .poster-box img{border-radius:22px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      background:#fff;border:2px dashed #ff9f1c;color:#a22a00;
+      padding:8px 14px;border-radius:999px;font-weight:800;font-size:15px;
+      box-shadow:0 6px 16px rgba(255,132,0,.15);
+    }
+    h1{
+      font-size:clamp(32px,5vw,64px);
+      line-height:1.04;
+      margin:16px 0 8px;
+      color:var(--blue);
+      font-weight:800;
+      letter-spacing:-.4px;
+    }
+    h1 .accent{color:var(--red)}
+    .lead{
+      margin:0 0 16px;
+      font-size:clamp(18px,2vw,24px);
+      line-height:1.55;
+      color:#26334d;
+      font-weight:500;
+    }
+    .price-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:18px 0 14px}
+    .price-chip{
+      background:linear-gradient(135deg,#ff2b1e,#ff8b00);
+      color:#fff;
+      border-radius:24px;
+      padding:16px 18px;
+      font-weight:800;
+      min-width:150px;
+      box-shadow:0 14px 28px rgba(228,51,34,.28);
+      text-align:center;
+      line-height:1.15;
+    }
+    .price-chip strong{font-size:42px;display:block;margin-top:4px}
+    .cta{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      background:linear-gradient(135deg,#e71e1e,#ff8b00);
+      color:#fff;
+      border-radius:18px;
+      padding:16px 26px;
+      font-size:21px;
+      font-weight:800;
+      border:2px solid #ffd57a;
+      box-shadow:0 16px 32px rgba(228,51,34,.32);
+      transition:transform .2s ease, filter .2s ease;
+    }
+    .cta:hover{transform:translateY(-2px);filter:saturate(1.06)}
+    .cta.secondary{background:#fff;color:var(--blue);border-color:#dce6ff;box-shadow:none}
+    .hint{
+      background:#fff7db;
+      border:1px solid #ffd76f;
+      color:#7a4600;
+      border-radius:18px;
+      padding:14px 16px;
+      font-size:17px;
+      line-height:1.5;
+      font-weight:600;
+    }
+    .trust{
+      margin-top:14px;
+      display:grid;
+      gap:10px;
+    }
+    .trust-item{
+      display:flex;gap:10px;align-items:flex-start;
+      background:rgba(255,255,255,.76);
+      border:1px solid #edf2ff;
+      border-radius:16px;
+      padding:12px 14px;
+      font-weight:700;
+      color:#17305f;
+    }
+    .topics{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .topics span{padding:8px 14px;border-radius:999px;background:#fff;border:1px solid #dfe7fd;color:#103f99;font-weight:700;font-size:15px}
+    .section{padding:28px 0}
+    .title{text-align:center;color:var(--blue);font-size:clamp(28px,4vw,42px);font-weight:800;margin:0 0 18px}
+    .subtitle{text-align:center;color:#52607b;font-size:18px;max-width:860px;margin:0 auto 18px;line-height:1.55}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{
+      background:#fff;
+      border-radius:24px;
+      border:1px solid var(--border);
+      padding:20px;
+      box-shadow:0 12px 28px rgba(10,35,102,.08);
+      height:100%;
+    }
+    .card .icon{font-size:30px;margin-bottom:8px}
+    .card h3{margin:0 0 8px;color:var(--blue);font-size:22px;font-weight:800}
+    .card p{margin:0;color:#4d5d77;font-size:17px;line-height:1.6;font-weight:500}
+    .prizes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .prize{
+      background:linear-gradient(180deg,#ffffff,#fff8e4);
+      border:2px solid #ffd46a;
+      border-radius:26px;
+      padding:22px;
+      text-align:center;
+      box-shadow:0 12px 26px rgba(255,198,56,.18);
+    }
+    .prize .cup{font-size:50px;margin-bottom:6px}
+    .prize b{display:block;color:var(--blue);font-size:22px;font-weight:800}
+    .prize strong{display:block;margin-top:8px;color:var(--red);font-size:38px;font-weight:800}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .step{background:#fff;border:1px solid var(--border);border-radius:22px;padding:18px;box-shadow:0 12px 26px rgba(10,35,102,.06)}
+    .num{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;font-weight:800;font-size:18px;margin-bottom:10px}
+    .step h3{margin:0 0 8px;color:var(--blue);font-size:21px;font-weight:800}
+    .step p{margin:0;color:#4d5d77;font-size:17px;line-height:1.55;font-weight:500}
+    .cta-panel{
+      background:linear-gradient(135deg,#071b54,#0d439f);
+      color:#fff;
+      border-radius:30px;
+      padding:26px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:18px;
+      align-items:center;
+      box-shadow:0 18px 36px rgba(10,35,102,.2);
+    }
+    .cta-panel h2{margin:0 0 8px;font-size:34px;line-height:1.15;font-weight:800}
+    .cta-panel p{margin:0;color:#e8f1ff;font-size:18px;line-height:1.55;font-weight:500}
+    .footer{padding:24px 0 92px;text-align:center;color:#596781;font-weight:700}
+    .footer strong{display:block;color:var(--blue);font-size:20px;margin-bottom:4px}
+    .sticky{
+      position:fixed;left:0;right:0;bottom:0;z-index:20;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(12px);
+      border-top:1px solid #e8eefc;
+      box-shadow:0 -8px 24px rgba(0,0,0,.08);
+      padding:10px 12px;
+    }
+    .sticky-bar{max-width:940px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .sticky-text{font-weight:800;color:var(--blue);font-size:16px;line-height:1.35}
+    .sticky .cta{padding:12px 18px;font-size:18px;border-radius:14px;white-space:nowrap}
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr;gap:20px}
+      .cards,.prizes,.steps{grid-template-columns:1fr 1fr}
+      .cta-panel{grid-template-columns:1fr}
+    }
+    @media (max-width: 640px){
+      .topbar{font-size:14px;padding:9px 12px}
+      .wrap{padding:0 12px}
+      .hero{padding-top:12px}
+      .poster-box{padding:8px;border-radius:20px}
+      .poster-box img{border-radius:14px}
+      .eyebrow{font-size:14px;padding:7px 12px}
+      h1{font-size:36px;line-height:1.1}
+      .lead{font-size:18px}
+      .price-row{display:grid;grid-template-columns:1fr;gap:12px}
+      .price-chip{width:100%;padding:14px 16px}
+      .price-chip strong{font-size:38px}
+      .cta{width:100%;font-size:19px;padding:15px 18px;border-radius:16px}
+      .hint{font-size:16px;padding:13px 14px}
+      .trust-item{font-size:16px;padding:11px 12px}
+      .topics span{font-size:14px;padding:7px 11px}
+      .title{font-size:30px}
+      .subtitle{font-size:17px}
+      .cards,.prizes,.steps{grid-template-columns:1fr}
+      .card,.prize,.step{padding:18px}
+      .card h3,.step h3,.prize b{font-size:21px}
+      .card p,.step p{font-size:16px}
+      .prize strong{font-size:34px}
+      .cta-panel{padding:20px;border-radius:24px;text-align:center}
+      .cta-panel h2{font-size:28px}
+      .cta-panel p{font-size:17px}
+      .footer{padding-bottom:98px}
+      .sticky-bar{flex-direction:column;align-items:stretch}
+      .sticky-text{text-align:center;font-size:15px}
+      .sticky .cta{width:100%;font-size:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">समर व्हेकेशन स्पेशल २०२६ • ऑनलाइन निबंध स्पर्धा • प्रवेश शुल्क फक्त ₹४९</div>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="poster-box">
+        <img src="assets/poster.png" alt="समर व्हेकेशन स्पेशल २०२६ ऑनलाइन निबंध स्पर्धा पोस्टर">
+      </div>
+
+      <div>
+        <div class="eyebrow">⭐ महाराष्ट्रातील विद्यार्थ्यांसाठी खास संधी</div>
+        <h1>मुलांच्या <span class="accent">प्रतिभेला</span> द्या<br>सुंदर व्यासपीठ!</h1>
+        <p class="lead">इयत्ता १ ली ते १० वी पर्यंतच्या विद्यार्थ्यांसाठी घरबसल्या सहभागी होता येणारी आकर्षक ऑनलाइन निबंध स्पर्धा. लेखनकौशल्य वाढवण्यासाठी, आत्मविश्वास वाढवण्यासाठी आणि मुलांच्या अभिव्यक्तीला चालना देण्यासाठी ही उत्तम संधी आहे.</p>
+
+        <div class="price-row">
+          <div class="price-chip">प्रवेश शुल्क<strong>₹४९</strong></div>
+          <a class="cta" href="https://rzp.io/rzp/uc7LHw8W" target="_blank" rel="noopener">फी भरा व सहभाग सुरू करा</a>
+        </div>
+
+        <div class="hint">पेमेंट पूर्ण झाल्यानंतर निबंध लिहिण्याचे पान उघडेल. विद्यार्थ्याचे नाव जसे प्रमाणपत्रावर हवे आहे तसेच अचूक लिहा.</div>
+
+        <div class="trust">
+          <div class="trust-item">✅ सर्व सहभागी विद्यार्थ्यांना आकर्षक डिजिटल प्रमाणपत्र</div>
+          <div class="trust-item">✅ निकाल दिनांक : ०१ जून २०२६</div>
+          <div class="trust-item">✅ निकाल पारदर्शक पद्धतीने जाहीर केला जाईल</div>
+        </div>
+
+        <div class="topics">
+          <span>माझी आई</span>
+          <span>माझे गाव</span>
+          <span>पर्यावरण</span>
+          <span>उन्हाळी सुट्टी</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="title">या स्पर्धेचे खास फायदे</h2>
+      <p class="subtitle">पालक आणि विद्यार्थ्यांसाठी सोपी, विश्वासार्ह आणि घरबसल्या पूर्ण करता येणारी प्रक्रिया.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">📱</div>
+          <h3>घरबसल्या सहभाग</h3>
+          <p>मोबाईलवरून काही मिनिटांत प्रवेश पूर्ण करा आणि त्यानंतर विद्यार्थी थेट निबंध लिहू शकतो.</p>
+        </div>
+        <div class="card">
+          <div class="icon">✍️</div>
+          <h3>लेखनकौशल्याला चालना</h3>
+          <p>निबंध लेखनामुळे विचारशक्ती, कल्पकता, भाषा आणि अभिव्यक्ती यांचा उत्तम विकास होतो.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🎓</div>
+          <h3>डिजिटल प्रमाणपत्र</h3>
+          <p>निबंध सादर केल्यानंतर विद्यार्थ्याच्या नावाने सुंदर डिजिटल प्रमाणपत्र तयार होईल.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:rgba(255,255,255,.62)">
+    <div class="wrap">
+      <h2 class="title">आकर्षक पारितोषिके</h2>
+      <div class="prizes">
+        <div class="prize"><div class="cup">🏆</div><b>प्रथम पारितोषिक</b><strong>₹५०१</strong></div>
+        <div class="prize"><div class="cup">🥈</div><b>द्वितीय पारितोषिक</b><strong>₹२५१</strong></div>
+        <div class="prize"><div class="cup">🥉</div><b>तृतीय पारितोषिक</b><strong>₹१५१</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="title">सहभागाची सोपी प्रक्रिया</h2>
+      <div class="steps">
+        <div class="step"><div class="num">१</div><h3>फी भरा</h3><p>₹४९ प्रवेश शुल्क भरून स्पर्धेत सहभाग निश्चित करा.</p></div>
+        <div class="step"><div class="num">२</div><h3>नाव लिहा</h3><p>विद्यार्थ्याचे पूर्ण नाव नीट लिहा. याच नावाने प्रमाणपत्र तयार होईल.</p></div>
+        <div class="step"><div class="num">३</div><h3>निबंध लिहा</h3><p>दिलेल्या जागेत पूर्ण निबंध लिहा आणि सादर करा.</p></div>
+        <div class="step"><div class="num">४</div><h3>प्रमाणपत्र घ्या</h3><p>सहभाग पूर्ण झाल्यावर प्रमाणपत्र डाउनलोड करा.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-panel">
+        <div>
+          <h2>आजच प्रवेश निश्चित करा</h2>
+          <p>उन्हाळी सुट्टीत मुलांच्या प्रतिभेला योग्य दिशा देणारा हा सुंदर उपक्रम आहे. मर्यादित प्रवेश सुरू आहे.</p>
+        </div>
+        <a class="cta" href="https://rzp.io/rzp/uc7LHw8W" target="_blank" rel="noopener">आता फी भरा</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="sticky">
+    <div class="sticky-bar">
+      <div class="sticky-text">प्रवेश शुल्क फक्त ₹४९ • नोंदणी सुरू आहे</div>
+      <a class="cta" href="https://rzp.io/rzp/uc7LHw8W" target="_blank" rel="noopener">फी भरा</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <strong>आयोजक : ऑल इंडिया टॅलेंट सर्च ग्रुप</strong>
+    स्पर्धेचा निकाल ०१ जून २०२६ रोजी जाहीर केला जाईल.
+  </footer>
+</body>
+</html>
